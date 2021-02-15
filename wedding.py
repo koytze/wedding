@@ -1,4 +1,4 @@
-"""TODO: guests list
+"""DONE: guests list
             1. First name
             2. Last Name
             3. City
@@ -32,10 +32,12 @@ TODO: reports
 
 """
 import re
+import sys
+
 lst_guests = ["First Name", "Last Name", "City",
               "Relationship", "Received invitation?", "Confirmed attendance?"]
 
-lst_preparations = ["dress", "toxedo", "chemise", "tbl_flowers",
+lst_preps = ["dress", "toxedo", "chemise", "tbl_flowers",
                     "bride_b", "gmother_b", "wed_candles", "wed_rings",
                     "photo", "dj", "saloon", "hair_dressing", "makeup"]
 
@@ -44,8 +46,12 @@ dic_guest = {}
 lst_all_preps = []
 dic_prep = {}
 
+guest_args = []
+orig_stdout = sys.stdout
+
 # result = re.match(r"[a-zA-z]+", text)
 # grab_data = input("Introduce {}: ".format(x))
+
 def add_guest():
     """A function to add a guest to a dictionary based to input
     received and after it passes validation rules
@@ -68,25 +74,24 @@ def add_guest():
                 grab_data = match_rule1.match(grab_data)
                 if grab_data is None:
                     raise ValueError("ERROR: Your input is wrong!")
-
                 else:
                     grab_data = grab_data.group()
                     # print("Column: {} with value: {}".format(x, grab_data))
                     dic_guest[x] = grab_data
-    print("\nGuest details added as follows:\n"
+    print("\nGuest details added as follow:\n"
           "===============================")
     for key in dic_guest:
         print("{}: {}".format(key, dic_guest[key]))
+    store_data()
 
 
-    lst_all_guests.append(dic_guest)
+def store_data():
+    with open('filename.txt', 'a') as f:
+        sys.stdout = f
+        print("{}".format(dic_guest), end='')
+        print()
+        sys.stdout = orig_stdout
+        # lst_all_guests.append(dic_guest)
 
-
-a = 0
-while a < 3:
-    add_guest()
-    a += 1
 
 add_guest()
-for q in range(0,len(lst_all_guests)):
-    print(lst_all_guests[q])
