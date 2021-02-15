@@ -1,5 +1,4 @@
-"""TODO:
-        1. guests list
+"""TODO: guests list
             1. First name
             2. Last Name
             3. City
@@ -7,7 +6,7 @@
             5. Got the invitation (y/n)
             6. Confirmed participation (y/n)
 
-        2. preparation list (name, price, bought)
+TODO: preparation list (name, price, bought)
             1. dress
             2. toxedo
             3. chemise
@@ -22,7 +21,7 @@
             12. hair dressing
             13. make-up
 
-        3. reports
+TODO: reports
             1. what have been paid
             2. what need to be paid
             3. who received the invitation
