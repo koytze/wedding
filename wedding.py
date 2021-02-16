@@ -5,6 +5,8 @@
             4. Relationship (e.g. cousin, parent, friend, etc)
             5. Got the invitation (y/n)
             6. Confirmed participation (y/n)
+TODO: connect to DB (server 192.168.56.30, DB: wedding, user: wed_usr)
+TODO: add all data to DB
 
 TODO: preparation list (name, price, bought)
             1. dress
